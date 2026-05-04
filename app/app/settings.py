@@ -28,7 +28,8 @@ SECRET_KEY = config('SECRET_KEY', default='django-insecure-rt&r)r5*6oixpz*3_a^f!
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', default='127.0.0.1,localhost').split(',')
+# Разрешаем все домены (включая сгенерированный Railway)
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
