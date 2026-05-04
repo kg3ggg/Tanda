@@ -38,7 +38,7 @@ CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app', 'https://*.railway.app']
 # Application definition
 
 INSTALLED_APPS = [
-
+    'unfold',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -120,9 +120,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bishkek'
 
 USE_I18N = True
 
@@ -148,4 +148,34 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
 }
+
+from django.templatetags.static import static
+
+UNFOLD = {
+    "SITE_TITLE": "Tanda Admin",
+    "SITE_HEADER": "Tanda",
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,
+        "navigation": [
+            {
+                "title": "Tanda",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Вопросы",
+                        "icon": "quiz",
+                        "link": "/admin/tanda/question/",
+                    },
+                    {
+                        "title": "Профессии",
+                        "icon": "work",
+                        "link": "/admin/tanda/profession/",
+                    },
+                ],
+            },
+        ],
+    },
+}
+
 

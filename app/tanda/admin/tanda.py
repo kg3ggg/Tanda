@@ -1,6 +1,6 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin, StackedInline, TabularInline
-from ..models.tanda import Question, Option
+from tanda.models.tanda import Question, Option
 
 class OptionInline(StackedInline):
     model = Option

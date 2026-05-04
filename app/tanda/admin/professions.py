@@ -1,6 +1,6 @@
 from django.contrib import admin
 from unfold.admin import ModelAdmin
-from ..models.professions import Profession
+from tanda.models.professions import Profession
 
 
 @admin.register(Profession)
