@@ -31,6 +31,9 @@ DEBUG = config('DEBUG', default=True, cast=bool)
 # Разрешаем все домены (включая сгенерированный Railway)
 ALLOWED_HOSTS = ['*']
 
+# Доверенные источники для POST-запросов (решает проблему CSRF в админке)
+CSRF_TRUSTED_ORIGINS = ['https://*.up.railway.app', 'https://*.railway.app']
+
 
 # Application definition
 
