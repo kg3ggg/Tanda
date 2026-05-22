@@ -9,9 +9,9 @@ skills = [("skill1", "Креативность"),
 
 
 class Profession(models.Model):
-    skill = models.CharField(choices=skills, verbose_name="Навык")  
-    profession = models.CharField(max_length=255, verbose_name="Профессия") 
-    image = models.ImageField(upload_to='tanda/photos/%Y/%m', verbose_name="Изображение")
+    skill = models.CharField(choices=skills, verbose_name="Навык", max_length=10)  
+    title = models.CharField(max_length=255, verbose_name="Профессия") 
+    image = models.ImageField(upload_to='tanda/photos/%Y/%m', verbose_name="Изображение", blank=True, null=True)
     reason = models.TextField(verbose_name="Причина")
     description = models.TextField(verbose_name="Описание")
     
@@ -21,4 +21,4 @@ class Profession(models.Model):
         verbose_name_plural = "Профессии"
     
     def __str__(self):
-        return self.skill + " - " + self.profession    
+        return f"{self.get_skill_display()} - {self.title}"    
