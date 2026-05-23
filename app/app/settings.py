@@ -95,6 +95,7 @@ WSGI_APPLICATION = 'app.wsgi.application'
 # Railway автоматически устанавливает DATABASE_URL при добавлении PostgreSQL плагина
 # Локально используется SQLite
 
+
 if config('DATABASE_URL', default=None):
     # На Railway - используем PostgreSQL
     DATABASES = {
@@ -111,6 +112,7 @@ else:
             'NAME': BASE_DIR / 'db.sqlite3',
         }
     }
+
 
 
 # Password validation
@@ -151,6 +153,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 # Media files (User uploads)
+
 MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
